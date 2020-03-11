@@ -1,17 +1,17 @@
 import React from 'react'
 
-
-class MarsRover extends React.Component{
+const MarsRover=(props)=>{
     
-    render(){
-
-        return(
+    return(
+        <div>
+            {props.marsRoverArray.map(card=> 
+            <MarsCard
+            key= {card.id}
+            card= {card}
+            />)}
            
-     <div></div>
-        )
-    }
-
-
-
+         </div>
+    )
+    
 }
 export default MarsRover

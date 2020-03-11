@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import About from './components/About'
 import './App.css';
@@ -13,8 +13,8 @@ class App extends React.Component {
   componentDidMount(){
     fetch("http://localhost:4000/mars_cards")
     .then(res=>res.json())
-    .then(data=>this.setState({
-      marsRoverArray: data
+    .then(array=>this.setState({
+      marsRoverArray: array
     }))
     }
     render(){
@@ -25,7 +25,7 @@ class App extends React.Component {
         <NavBar />
         <Route exact path="/about" component={About}/>
         <Route exact path="/marsrover" render={()=>
-        <MarsRover pictures={this.state.marsRoverArray}/>
+        <MarsRover marsRoverArray={this.state.marsRoverArray}/>
         }/>
      </div>
   )
