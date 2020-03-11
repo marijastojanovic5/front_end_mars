@@ -13,7 +13,9 @@ class App extends React.Component {
   componentDidMount(){
     fetch("http://localhost:4000/mars_cards")
     .then(res=>res.json())
-    .then(data=>console.log(data))
+    .then(data=>this.setState({
+      marsRoverArray: data
+    }))
     }
     render(){
   return (
@@ -22,13 +24,12 @@ class App extends React.Component {
      
         <NavBar />
         <Route exact path="/about" component={About}/>
-        <Route exact path="/marsrover" component={MarsRover}/>
-        
-       
-   
-    </div>
+        <Route exact path="/marsrover" render={()=>
+        <MarsRover pictures={this.state.marsRoverArray}/>
+        }/>
+     </div>
   )
-  }
+      }
 }
 
 export default App;
