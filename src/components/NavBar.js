@@ -1,19 +1,20 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 const NavBar=()=>{
     return (
         <div>
-           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Mars Logo here</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+           <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <a className="navbar-brand" > <i class="pe-7s-rocket">Mars Logo here</i></a>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-    {/* <Link className="item navmenu" to="/searchpage">bbb</Link> */}
-      <a class="nav-item nav-link active" href="#">About Mars <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Mars Weather</a>
-      <a class="nav-item nav-link" href="#">Mars Rover</a>
-      <a class="nav-item nav-link" href="#">Login</a>
+  <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div className="navbar-nav">
+    
+    <Link to="/about"> <a className="nav-item nav-link active" >About Mars <span className="sr-only">(current)</span></a></Link>
+      <a className="nav-item nav-link" >Mars Weather</a>
+      <a className="nav-item nav-link" >Mars Rover</a>
+      <a className="nav-item nav-link" >Login</a>
     </div>
   </div>
 </nav>

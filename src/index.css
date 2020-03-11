@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.pic {
+  background-image: url("https://spacewallpapers.org/wp-content/uploads/2014/11/new-day-of-the-mars.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
