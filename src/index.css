@@ -16,3 +16,10 @@ code {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.card-group {
+   display: flex; 
+  
+}
+.card {
+  
+}
