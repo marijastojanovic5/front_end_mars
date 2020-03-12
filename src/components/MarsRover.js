@@ -1,5 +1,4 @@
 import React from 'react'
-import MarsCard from './MarsCard'
 import {Link} from 'react-router-dom'
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import {Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import About from './components/About'
+import Login from "./components/Login"
 import './App.css';
 import MarsRover from './components/MarsRover';
 import MarsCard from './components/MarsCard';
@@ -25,6 +26,7 @@ class App extends React.Component {
     <div className="App">
      
         <NavBar />
+        <Route exact path="/login" component={Login}/>
         <Route exact path="/about" component={About}/>
         <Route  path="/marsrover/:id" render={(props)=>{
           let id=parseInt(props.match.params.id)
