@@ -16,7 +16,7 @@ class UserProfile extends React.Component {
     }
     render() {
         return(
-            <div>Helloo</div>
+            <div>Helloo {this.state.userObj.name}</div>
         )
     }
 

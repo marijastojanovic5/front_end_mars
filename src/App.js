@@ -10,7 +10,8 @@ import UserProfile from './components/UserProfile'
 
 class App extends React.Component {
    state={
-      marsRoverArray: []
+      marsRoverArray: [],
+      loading: true
     }
   
   componentDidMount(){
@@ -27,7 +28,8 @@ class App extends React.Component {
     <div className="App">
      
         <NavBar />
-        <Route exact path="/login" component={Login}/>
+        <Route exact path="/login" render={(props)=>(
+        <Login/>)}/>
         <Route exact path="/about" component={About}/>
         <Route  path="/marsrover/:id" render={(props)=>{
           let id=parseInt(props.match.params.id)
