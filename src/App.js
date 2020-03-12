@@ -6,6 +6,7 @@ import Login from "./components/Login"
 import './App.css';
 import MarsRover from './components/MarsRover';
 import MarsCard from './components/MarsCard';
+import UserProfile from './components/UserProfile'
 
 class App extends React.Component {
    state={
@@ -41,6 +42,9 @@ class App extends React.Component {
        
         />
         }/>
+        <Route exact path ="/users/:id" render={(props)=>{
+          let id=parseInt(props.match.params.id)
+          return <UserProfile id ={id}/>}}/>
      </div>
   )
       }
