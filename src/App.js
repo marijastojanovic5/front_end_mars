@@ -12,11 +12,13 @@ class App extends React.Component {
    state={
       marsRoverArray: [],
       currentUser: null
-      
-      
     }
-    updateCurrentUser=()=>{
-      console.log("Inside current user")
+     
+    updateCurrentUser=(user)=>{
+      this.setState({
+        currentUser: user
+      })
+      
     }
   
   componentDidMount(){
@@ -42,12 +44,12 @@ class App extends React.Component {
           return <MarsCard
           card ={foundCard}/>
         }}/>
-        {/* <Route exact path="/login" render={() => {
-              return this.state.currentUser ? <Redirect to="/users/:id"/> : <Login
+         <Route exact path="/login" render={() => {
+              return this.state.currentUser ? <UserProfile user={this.state.updateCurrentUser}/> : <Login
                 updateCurrentUser={this.updateCurrentUser}
               />
-            }} /> */}
-            <Route exact path="/login" component={Login}/>
+            }} /> 
+       
 
         <Route exact path="/marsrover" render={()=>
         <MarsRover 

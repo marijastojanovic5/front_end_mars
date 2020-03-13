@@ -10,10 +10,7 @@ class Login extends React.Component{
    this.setState(copy)
 }
   
-    
-
-  
-  handleLoginSubmit=(e)=>{
+    handleLoginSubmit=(e)=>{
     e.preventDefault()
       fetch(`http://localhost:4000/login`,{
         method: "POST",
@@ -25,8 +22,8 @@ class Login extends React.Component{
           username: this.state.username
         })
       }).then(res => res.json())
-        .then(data => {
-         console.log(data)
+        .then(user => {
+         this.props.updateCurrentUser(user)
       })
     }
     
