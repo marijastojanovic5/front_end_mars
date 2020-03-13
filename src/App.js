@@ -11,9 +11,12 @@ import UserProfile from './components/UserProfile'
 class App extends React.Component {
    state={
       marsRoverArray: [],
-      currentUser: null,
-      loading: true
+      currentUser: null
       
+      
+    }
+    updateCurrentUser=()=>{
+      console.log("Inside current user")
     }
   
   componentDidMount(){
@@ -23,9 +26,7 @@ class App extends React.Component {
       marsRoverArray: array
     }))
     }
-    updateCurrentUser = (user) => {
-      this.setState({currentUser: user})
-    }
+   
     
   render(){
   return (
@@ -41,11 +42,12 @@ class App extends React.Component {
           return <MarsCard
           card ={foundCard}/>
         }}/>
-        <Route exact path="/login" render={() => {
+        {/* <Route exact path="/login" render={() => {
               return this.state.currentUser ? <Redirect to="/users/:id"/> : <Login
                 updateCurrentUser={this.updateCurrentUser}
               />
-            }} />
+            }} /> */}
+            <Route exact path="/login" component={Login}/>
 
         <Route exact path="/marsrover" render={()=>
         <MarsRover 
