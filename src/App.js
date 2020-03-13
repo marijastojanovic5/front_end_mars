@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom'
+import {Route,Redirect,Switch} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import About from './components/About'
 import Login from "./components/Login"
@@ -11,7 +11,9 @@ import UserProfile from './components/UserProfile'
 class App extends React.Component {
    state={
       marsRoverArray: [],
+      currentUser: null,
       loading: true
+      
     }
   
   componentDidMount(){
@@ -21,6 +23,9 @@ class App extends React.Component {
       marsRoverArray: array
     }))
     }
+    updateCurrentUser = (user) => {
+      this.setState({currentUser: user})
+    }
     
   render(){
   return (
@@ -28,8 +33,7 @@ class App extends React.Component {
     <div className="App">
      
         <NavBar />
-        <Route exact path="/login" render={(props)=>(
-        <Login/>)}/>
+        <Switch>
         <Route exact path="/about" component={About}/>
         <Route  path="/marsrover/:id" render={(props)=>{
           let id=parseInt(props.match.params.id)
@@ -37,6 +41,11 @@ class App extends React.Component {
           return <MarsCard
           card ={foundCard}/>
         }}/>
+        <Route exact path="/login" render={() => {
+              return this.state.currentUser ? <Redirect to="/users/:id"/> : <Login
+                updateCurrentUser={this.updateCurrentUser}
+              />
+            }} />
 
         <Route exact path="/marsrover" render={()=>
         <MarsRover 
@@ -47,6 +56,9 @@ class App extends React.Component {
         <Route exact path ="/users/:id" render={(props)=>{
           let id=parseInt(props.match.params.id)
           return <UserProfile id ={id}/>}}/>
+           </Switch>
+        
+          
      </div>
   )
       }
