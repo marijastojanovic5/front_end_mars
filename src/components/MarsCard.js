@@ -1,8 +1,6 @@
 import React from 'react'
 
 const MarsCard=(props)=>{
-    console.log("Mars card props",props)
-   
     return(
         <div>
         {props.card ?
@@ -18,6 +16,7 @@ const MarsCard=(props)=>{
          <p className="card-text">Launch date: {props.card.launch_date}</p>
          <p className="card-text">Landing date: {props.card.landing_date}</p>
          <p className="card-text">Status: {props.card.status}</p>
+         <button type="button" class="btn btn-dark" onClick={()=>{props.addToFavorites(props.card)}}>Add this to your library</button>
          </div>
         </div>
         </div>:

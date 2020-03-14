@@ -11,7 +11,8 @@ import UserProfile from './components/UserProfile'
 class App extends React.Component {
    state={
       marsRoverArray: [],
-      currentUser: null
+      currentUser: null,
+      favorites: []
     }
      
     updateCurrentUser=(user)=>{
@@ -28,6 +29,17 @@ class App extends React.Component {
       marsRoverArray: array
     }))
     }
+
+    addToFavorites=(card)=>{
+      if(this.state.favorites.includes(card)){
+        alert("You already saved this to your libraby")
+      }else{
+      let newArray = [...this.state.favorites, card]
+        this.setState({
+        favorites: newArray})
+      }
+    }
+      
    
     
   render(){
@@ -36,17 +48,19 @@ class App extends React.Component {
     <div className="App">
      
         <NavBar />
-        <Switch>
+        
         <Route exact path="/about" component={About}/>
         <Route  path="/marsrover/:id" render={(props)=>{
           let id=parseInt(props.match.params.id)
           let foundCard= this.state.marsRoverArray.find(card =>card.id === id)
           return <MarsCard
-          card ={foundCard}/>
+          card ={foundCard}
+          addToFavorites={this.addToFavorites}
+          favorites ={this.state.favorites}/>
         }}/>
          <Route exact path="/login" render={() => {
-              return this.state.currentUser ? <UserProfile user={this.state.updateCurrentUser}/> : <Login
-                updateCurrentUser={this.updateCurrentUser}
+              return this.state.currentUser ? <Redirect to="/profile"/> : <Login
+              updateCurrentUser={this.updateCurrentUser}
               />
             }} /> 
        
@@ -57,10 +71,11 @@ class App extends React.Component {
        
         />
         }/>
-        <Route exact path ="/users/:id" render={(props)=>{
-          let id=parseInt(props.match.params.id)
-          return <UserProfile id ={id}/>}}/>
-           </Switch>
+        <Route exact path ="/profile" render={()=>
+        <UserProfile user ={this.state.currentUser}/>}/>
+         
+         
+           
         
           
      </div>

@@ -1,10 +1,18 @@
 import React from "react"
 
 
-const UserProfile =()=> {
+const UserProfile =(props)=> {
+ let {name, username}= props.user
+  
     
         return(
-            <div>Helloo </div>
+            <div> 
+               Hello {username} !<br/>
+               Your library :
+
+               
+               
+           </div>
         )
     
 
