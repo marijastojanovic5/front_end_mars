@@ -1,13 +1,12 @@
 import React from 'react'
 
 const MarsCard=(props)=>{
+    
     return(
         <div>
-        {props.card ?
+        {props.card ? 
         
-      
-         
-        <div class="col mb-4">
+        <div class="col mb-4" >
         <div className="card">
          <h6 className="card-title">Picture taken with Mars Rover</h6>
         <img  src={props.card.image} className="card-img-top" alt="mars"/>
@@ -16,12 +15,14 @@ const MarsCard=(props)=>{
          <p className="card-text">Launch date: {props.card.launch_date}</p>
          <p className="card-text">Landing date: {props.card.landing_date}</p>
          <p className="card-text">Status: {props.card.status}</p>
-         <button type="button" class="btn btn-dark" onClick={()=>{props.addToFavorites(props.card)}}>Add this to your library</button>
+         <button type="button" class="btn btn-dark" 
+         onClick={()=>{props.onClickHandler(props.card)}} >Add this to your library</button>
          </div>
+         </div> 
+         </div> :
+         null} 
         </div>
-        </div>:
-        null}
-        </div>
+        
        
        
        

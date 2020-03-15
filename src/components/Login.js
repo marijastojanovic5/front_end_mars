@@ -1,5 +1,5 @@
 import React from 'react'
-class Login extends React.Component{
+class Login extends React.Component {
   state={
     username:""
   }
@@ -22,13 +22,13 @@ class Login extends React.Component{
           username: this.state.username
         })
       }).then(res => res.json())
-        .then(user => {
+        .then(user=>{
          this.props.updateCurrentUser(user)
-      })
-    }
+         }) 
+        }
     
       
-    render(){
+    render() {
     return(
         <form onSubmit={this.handleLoginSubmit}>
         <div className="form-row align-items-center">
@@ -46,5 +46,5 @@ class Login extends React.Component{
         
     )
     }
-}
+  }
 export default Login

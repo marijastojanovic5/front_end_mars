@@ -12,9 +12,9 @@ const NavBar=()=>{
     <div className="navbar-nav">
     
     <Link to="/about"> <a className="nav-item nav-link active" >About Mars <span className="sr-only">(current)</span></a></Link>
-      <a className="nav-item nav-link" >Mars Weather</a>
-      <a className="nav-item nav-link" >Mars Rover</a>
-     <a className="nav-item nav-link" >Login</a>
+    <Link to="/marsweather"> <a className="nav-item nav-link" >Mars Weather</a></Link>
+    <Link to="/marsrover"> <a className="nav-item nav-link" >Mars Rover</a></Link>
+    <Link to="/login"><a className="nav-item nav-link" >Login</a></Link>
     </div>
   </div>
 </nav>

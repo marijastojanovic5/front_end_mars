@@ -1,14 +1,24 @@
 import React from "react"
+import MarsCard from './MarsCard'
 
 
 const UserProfile =(props)=> {
- let {name, username}= props.user
+    //debugger
+   console.log("what is this",props)
+
   
     
         return(
             <div> 
-               Hello {username} !<br/>
-               Your library :
+               Hello {props.user.username} !<br/>
+              <div> Your library:
+                  {props.favorites.map(card=>
+                    <MarsCard
+                    card={card}
+                    key={card.id}
+                    removeMarsCard={props.removeMarsCard}
+                    />)}
+              </div>
 
                
                
