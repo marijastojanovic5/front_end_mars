@@ -19,8 +19,7 @@ class App extends React.Component {
     }
      
     updateCurrentUser=(user)=>{
-      debugger
-     this.setState({
+      this.setState({
         currentUser: user.user,
         loading: true,
         favorites: user.favorites
@@ -65,6 +64,13 @@ class App extends React.Component {
        })
         
     }
+    removeFromFavorites = (card) => {
+      
+      let newArray= this.state.favorites.filter(c=> c!==card)
+         this.setState({
+         favorites: newArray})
+       
+       }
   
   render(){
   return (
@@ -82,6 +88,10 @@ class App extends React.Component {
         return <MarsCard
           card ={foundCard}
           onClickHandler={this.onClickHandler}
+          remove={false}
+          
+          
+
          
           />
         }}/>
@@ -93,6 +103,7 @@ class App extends React.Component {
         <UserProfile 
         user ={this.state.currentUser}
         favorites ={this.state.favorites}
+        onClickHandler={this.removeFromFavorites}
         
 
         />}/>
