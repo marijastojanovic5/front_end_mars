@@ -21,7 +21,7 @@ const MarsCard=(props)=>{
             <Button className='mt-auto font-weight-bold' variant="success" 
             onClick={()=>{props.onClickHandler(props.card)}} >Add this to your library</Button> :
             <Button className='mt-auto font-weight-bold' variant="danger" 
-            onClick={()=>{props.onClickHandler(props.card)}} >Remove from your ibrary</Button>}
+            onClick={()=>{props.onClickHandler(props.card)}} >Remove from your library</Button>}
 
 
         </Card>

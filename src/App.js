@@ -64,8 +64,19 @@ class App extends React.Component {
        })
         
     }
-    removeFromFavorites = (card) => {
-      
+
+    removeFromFavorites=(card)=>{
+      let cardId =card.id
+      fetch(`http://localhost:4000/favorites/${this.state.currentUser.id}/`+ cardId,{
+        method: "DELETE"
+      })
+      .then(()=>{
+       this.removeCardFavorites(card)
+        
+      })
+    }
+     
+      removeCardFavorites = (card) => {
       let newArray= this.state.favorites.filter(c=> c!==card)
          this.setState({
          favorites: newArray})
@@ -79,7 +90,8 @@ class App extends React.Component {
      
 
         <Router>
-        <NavBar 
+        <NavBar
+        user= {this.state.currentUser} 
         />
         <Route exact path="/" render={() => <Redirect to="/login" />} />
         <Route exact path="/marsrover/:id" render={(props)=>{
@@ -89,10 +101,7 @@ class App extends React.Component {
           card ={foundCard}
           onClickHandler={this.onClickHandler}
           remove={false}
-          
-          
-
-         
+   
           />
         }}/>
         <Route exact path="/marsrover" render={()=>

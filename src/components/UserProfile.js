@@ -1,9 +1,10 @@
 import React from "react"
 import MarsCard from './MarsCard'
-import { Button } from "react-bootstrap"
+
 
 
 const UserProfile =(props)=> {
+
     
         return(
             <div> 
@@ -13,8 +14,8 @@ const UserProfile =(props)=> {
                     <MarsCard
                     card={card}
                     key={card.id}
-                   remove={true}
-                   onClickHandler={props.onClickHandler}
+                    remove={true}
+                    onClickHandler={props.onClickHandler}
                     
                     />)}
               </div>

@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-const NavBar=()=>{
+import {Link,withRouter} from 'react-router-dom'
+const NavBar=(props)=>{
     return (
         <div>
            <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,7 +14,9 @@ const NavBar=()=>{
     <Link to="/about"> <a className="nav-item nav-link active" >About Mars <span className="sr-only">(current)</span></a></Link>
     <Link to="/marsweather"> <a className="nav-item nav-link" >Mars Weather</a></Link>
     <Link to="/marsrover"> <a className="nav-item nav-link" >Mars Rover</a></Link>
-    <Link to="/login"><a className="nav-item nav-link" >Login</a></Link>
+    <Link to="/profile"><a className="nav-item nav-link" >Profile</a></Link>
+    {props.match.url === "/login" ? null :
+    <Link to="/login"><a className="nav-item nav-link" >Login</a></Link>}
     </div>
   </div>
 </nav>
@@ -22,4 +24,4 @@ const NavBar=()=>{
     )
 
 }
-export default NavBar
+export default withRouter(NavBar)
