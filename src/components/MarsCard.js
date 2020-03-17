@@ -1,11 +1,14 @@
 import React from 'react'
-import { Card, Badge, Button } from "react-bootstrap"
+import { Card,Button } from "react-bootstrap"
+
+
 
 
 const MarsCard=(props)=>{
     return(
-    //    <div>
-        // {props.card ? 
+        // <div>
+           
+        // {/* // {props.card ?  */}
         <Card className = "h-10 shadow -sm" >
             <Card.Img variant = "top" src = {props.card.image}/>
             <Card.Body className ="d-flex flex-column">
@@ -23,13 +26,16 @@ const MarsCard=(props)=>{
             <Button className='mt-auto font-weight-bold' variant="danger" 
             onClick={()=>{props.onClickHandler(props.card)}} >Remove from your library</Button>}
 
+           
 
         </Card>
+    
+       
        
        
          
+    // </div>
         //  {/* </div>
-        //  </div>
         //  </div>  */}
         //  {/* </div> : */}
         // {/* //  null} 
