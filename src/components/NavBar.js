@@ -11,12 +11,12 @@ const NavBar=(props)=>{
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div className="navbar-nav">
     
-    <Link to="/about"> <a className="nav-item nav-link active" >About Mars <span className="sr-only">(current)</span></a></Link>
-    <Link to="/marsweather"> <a className="nav-item nav-link" >Mars Weather</a></Link>
-    <Link to="/marsrover"> <a className="nav-item nav-link" >Mars Rover</a></Link>
-    <Link to="/profile"><a className="nav-item nav-link" >Profile</a></Link>
+    <Link to="/about" >About Mars <span className="sr-only">(current)</span></Link>
+    <Link to="/marsweather">Mars Weather</Link>
+    <Link to="/marsrover" >Mars Rover</Link>
+    <Link to="/profile">Profile</Link>
     {props.match.url === "/login" ? null :
-    <Link to="/login"><a className="nav-item nav-link" >Login</a></Link>}
+    <Link to="/login">Login</Link>}
     </div>
   </div>
 </nav>
