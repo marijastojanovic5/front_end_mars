@@ -15,7 +15,7 @@ class MarsCard extends React.Component{
     }
     
     submitHandler=(e)=>{
-        debugger
+       
     }
     
 

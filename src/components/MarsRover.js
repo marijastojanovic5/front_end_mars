@@ -5,51 +5,37 @@ import {Link} from 'react-router-dom'
 
 class MarsRover extends React.Component{
     state ={
-        start: 0,
-        numToDispay: 4,
-        currentObj: "Front Hazard Avoidance Camera"
+       currentObj: null
     }
 
-
-     filteredCameraPics(){
+    filteredCameraPics(){
          return(
              this.props.marsRoverArray.filter(img=>img.name ===this.state.currentObj)
          )
+    }
+     onChangeHandler=(e)=>{
+         let name =e.target.value
+         this.setState({
+             currentObj: name
+         })
 
      }
-     dispalyedPics(){
-        return(
-            this.filteredCameraPics().splice(this.state.start,(this.state.start + this.state.numToDispay))
-        )
-
+     camerasNames(){
+      return(["Front Hazard Avoidance Camera","Rear Hazard Avoidance Camera",
+      "Mast Camera","Chemistry and Camera Complex","Navigation Camera"]
+      )
     }
-    // camerasNames(){
-    //  return (
-    //  fetch("http://localhost:4000/cameras")
-    // .then(res => res.json())
-    // .then(data=> console.log(data))
-    // )}
-    //data is: 
-    //   ["Front Hazard Avoidance Camera","Rear Hazard Avoidance Camera",
-    //   "Mast Camera","Chemistry and Camera Complex","Navigation Camera"]
     
-      
     render(){
     return(
         <React.Fragment>
             <form>
-           <select >
-               
-                <option>Choose Mars Rover Cameras</option>
-                  {/* <option>{this.camerasNames().map(data=>data.name)}</option>  */}
+            <select onChange={this.onChangeHandler}>
+                {this.camerasNames().map(name=><option value={name}>{name} </option> )}
             </select>
-            
             </form>
-
-
             <div className="row row-cols-1 row-cols-md-4">
-
-            {this.dispalyedPics().map(card=> 
+             {this.filteredCameraPics().map(card=> 
             <Link to={`/marsrover/${card.id}`}>
             <img style ={{width: 100, height: 100}} src={card.image} alt={card.name} /></Link> )}
             </div>
