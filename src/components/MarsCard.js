@@ -13,7 +13,7 @@ class MarsCard extends React.Component{
 
     componentDidMount(){
         fetch(`http://localhost:4000/mars_cards/${this.props.card.id}`)
-        .then(res => res.json())
+        .then(res =>res.json())
         .then(data => {
             this.setState({allComments: data["comments"]})
     })}

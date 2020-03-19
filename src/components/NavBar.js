@@ -12,6 +12,7 @@ const NavBar=(props)=>{
     <div className="navbar-nav">
     
     <Link to="/about" >About Mars <span className="sr-only">(current)</span></Link>
+    <Link to="/pictureoftheday">Pic of the day</Link>
     <Link to="/marsweather">Mars Weather</Link>
     <Link to="/marsrover" >Mars Rover</Link>
     <Link to="/profile">Profile</Link>

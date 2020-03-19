@@ -7,6 +7,8 @@ import './App.css';
 import MarsRover from './components/MarsRover';
 import MarsCard from './components/MarsCard';
 import UserProfile from './components/UserProfile'
+import PictureOfTheDay from './components/PictureOfTheDay';
+ 
 
 class App extends React.Component {
    state={
@@ -19,6 +21,7 @@ class App extends React.Component {
     }
      
     updateCurrentUser=(user)=>{
+      
       this.setState({
         currentUser: user.user,
         loading: true,
@@ -124,6 +127,7 @@ class App extends React.Component {
           />
         }} /> 
         <Route exact path="/about" component={About}/>
+        <Route exact path ="/pictureoftheday"component={PictureOfTheDay}/>
         
         </Router>
        
