@@ -99,6 +99,7 @@ class App extends React.Component {
           let foundCard= this.state.marsRoverArray.find(card =>card.id === id)
         return <MarsCard
           card ={foundCard}
+          id={id}
           onClickHandler={this.onClickHandler}
           remove={false}
           userId={this.state.currentUser.id}

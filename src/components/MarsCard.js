@@ -9,6 +9,13 @@ class MarsCard extends React.Component{
         comment: "",
         allComments: []
     }
+
+
+    componentDidMount(){
+        fetch(`http://localhost:4000/mars_cards/${this.props.id}`)
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
     handleChange=(e)=>{
     let copy = {...this.state} 
     copy[e.target.name] = e.target.value
