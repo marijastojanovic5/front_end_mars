@@ -14,9 +14,9 @@ class MarsRover extends React.Component{
          )
     }
      onChangeHandler=(e)=>{
-         let name =e.target.value
+         let cameraName =e.target.value
          this.setState({
-             currentObj: name
+             currentObj: cameraName
          })
 
      }
@@ -30,6 +30,7 @@ class MarsRover extends React.Component{
     return(
         <React.Fragment>
             <form>
+                Please select one of the following: 
             <select onChange={this.onChangeHandler}>
                 {this.camerasNames().map(name=><option value={name}>{name} </option> )}
             </select>

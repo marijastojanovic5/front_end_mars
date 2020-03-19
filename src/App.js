@@ -101,6 +101,8 @@ class App extends React.Component {
           card ={foundCard}
           onClickHandler={this.onClickHandler}
           remove={false}
+          userId={this.state.currentUser.id}
+
    
           />
         }}/>

@@ -4,9 +4,10 @@ import { Card,Button,Form } from "react-bootstrap"
 
 class MarsCard extends React.Component{
     state={
+        
         name: "",
         comment: "",
-        allReviews: []
+        allComments: []
     }
     handleChange=(e)=>{
     let copy = {...this.state} 
@@ -14,9 +15,29 @@ class MarsCard extends React.Component{
     this.setState(copy)
     }
     
-    submitHandler=(e)=>{
-       
-    }
+    submitReview=(e)=>{
+       e.preventDefault()
+       fetch("http://localhost:4000/comments",{
+           method: "POST",
+           headers: {
+            "Content-Type" :"application/json",
+            "Accept": "application/json"
+           },
+           body: JSON.stringify({user_id: this.props.userId, mars_card_id: this.props.card.id,name: this.state.name, comment: this.state.comment})
+
+         })
+         .then(res=>res.json())
+         .then(comment=>{
+           this.setState({
+              allComments: [comment.comment, ...this.state.allComments]
+           })
+          
+             })
+           
+        }      
+  
+
+
     
 
     render(){
@@ -25,8 +46,8 @@ class MarsCard extends React.Component{
            
         // {/* // {props.card ?  */}
         <React.Fragment>
-        <Card className = "h-10 shadow -sm" >
-            <Card.Img variant = "top" src = {this.props.card.image}/>
+        <Card>
+            <img variant = "top" src ={this.props.card.image}/>
             <Card.Body className ="d-flex flex-column">
                 <div  className ="d-flex mb-2 justify-content-between">
                     <Card.Title className = "mb-0 font-weight-bold">{this.props.card.name}
@@ -42,7 +63,7 @@ class MarsCard extends React.Component{
             <Button className='mt-auto font-weight-bold' variant="danger" 
             onClick={()=>{this.props.onClickHandler(this.props.card)}} >Remove from your library</Button>}
            </Card>
-           <Form onClick={this.submitReview}>
+           <Form onSubmit={this.submitReview}>
            <Form.Group>
              <Form.Label>Your Name</Form.Label>
              <Form.Control type="text" name="name"  placeholder="Your name here..." onChange={this.handleChange} />
@@ -52,18 +73,15 @@ class MarsCard extends React.Component{
              <Form.Control type="text" name="comment" placeholder="Leave a comment..."  onChange={this.handleChange}/>
            </Form.Group>
           <Button variant="primary" type="submit">Submit</Button>
+          <h4>All comments:</h4>
+          {this.state.allComments ? 
+          this.state.allComments.map(comment=><li>{comment.comment} </li>)
+          :
+          null
+          }
          </Form>
          
          </React.Fragment>
-    
-       
-       
-       
-         
-   
-        
-       
-       
        
     )
     }
