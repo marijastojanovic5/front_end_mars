@@ -4,7 +4,7 @@ import { Card,Button,Form } from "react-bootstrap"
 
 class MarsCard extends React.Component{
     state={
-        
+      
         name: "",
         comment: "",
         allComments: []
@@ -12,10 +12,11 @@ class MarsCard extends React.Component{
 
 
     componentDidMount(){
-        fetch(`http://localhost:4000/mars_cards/${this.props.id}`)
+        fetch(`http://localhost:4000/mars_cards/${this.props.card.id}`)
         .then(res => res.json())
-        .then(data => console.log(data))
-    }
+        .then(data => {
+            this.setState({allComments: data["comments"]})
+    })}
     handleChange=(e)=>{
     let copy = {...this.state} 
     copy[e.target.name] = e.target.value
@@ -30,13 +31,13 @@ class MarsCard extends React.Component{
             "Content-Type" :"application/json",
             "Accept": "application/json"
            },
-           body: JSON.stringify({user_id: this.props.userId, mars_card_id: this.props.card.id,name: this.state.name, comment: this.state.comment})
+           body: JSON.stringify({comment: this.state.comment,user_id: this.props.userId, mars_card_id: this.props.card.id,name: this.state.name})
 
          })
          .then(res=>res.json())
          .then(comment=>{
            this.setState({
-              allComments: [comment.comment, ...this.state.allComments]
+              allComments: [comment, ...this.state.allComments]
            })
           
              })

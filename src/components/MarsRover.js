@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 class MarsRover extends React.Component{
     state ={
-       currentObj: null
+       currentObj: "Front Hazard Avoidance Camera"
     }
 
     filteredCameraPics(){
