@@ -44,10 +44,6 @@ class MarsCard extends React.Component{
            
         }      
   
-
-
-    
-
     render(){
     return(
         // <div>

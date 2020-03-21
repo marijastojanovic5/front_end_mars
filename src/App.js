@@ -8,6 +8,7 @@ import MarsRover from './components/MarsRover';
 import MarsCard from './components/MarsCard';
 import UserProfile from './components/UserProfile'
 import PictureOfTheDay from './components/PictureOfTheDay';
+import MarsWeather from './components/MarsWeather'
  
 
 class App extends React.Component {
@@ -127,6 +128,7 @@ class App extends React.Component {
           />
         }} /> 
         <Route exact path="/about" component={About}/>
+        <Route exact path="/marsweather" component ={MarsWeather}/>
         <Route exact path ="/pictureoftheday"component={PictureOfTheDay}/>
         
         </Router>

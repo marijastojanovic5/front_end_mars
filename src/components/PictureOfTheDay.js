@@ -18,7 +18,7 @@ class  PictureOfTheDay extends React.Component{
     return(
       
         <div className="card" style={{width: 1000}}>
-        <img className="card-img-top" src={url} alt="Card image"/>
+        <img className="card-img-top" src={url} alt="nasa"/>
         <div className="card-img-overlay">
         </div>
             <h5>{date}</h5>
