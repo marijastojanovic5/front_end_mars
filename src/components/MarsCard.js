@@ -42,7 +42,22 @@ class MarsCard extends React.Component{
           
              })
            
-        }      
+        }  
+        deleteHandler=(comment)=>{
+            let userId=comment.user_id
+            let marsCard= comment.mars_card_id
+        fetch(`http://localhost:4000/comments/${userId}/${marsCard}`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
+
+        let res = this.state.allComments.filter(comm => comm.id !== comment.id)
+        this.setState({allComments: res})
+        
+         }    
   
     render(){
     return(
@@ -79,7 +94,11 @@ class MarsCard extends React.Component{
           <Button variant="primary" type="submit">Submit</Button>
           <h4>All comments:</h4>
           {this.state.allComments ? 
-          this.state.allComments.map(comment=><li>{comment.comment} </li>)
+          this.state.allComments.map(comment=>
+          <li>
+              {comment.comment} 
+              <Button onClick={()=>this.deleteHandler(comment)}> Delete</Button>
+              </li>)
           :
           null
           }
