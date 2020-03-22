@@ -44,9 +44,9 @@ class MarsCard extends React.Component{
            
         }  
         deleteHandler=(comment)=>{
-            let userId=comment.user_id
-            let marsCard= comment.mars_card_id
-        fetch(`http://localhost:4000/comments/${userId}/${marsCard}`, {
+           let commentId = comment.id
+           
+        fetch(`http://localhost:4000/comments/${commentId}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",
@@ -94,10 +94,10 @@ class MarsCard extends React.Component{
           <Button variant="primary" type="submit">Submit</Button>
           <h4>All comments:</h4>
           {this.state.allComments ? 
-          this.state.allComments.map(comment=>
+          this.state.allComments.map(commentObj=>
           <li>
-              {comment.comment} 
-              <Button onClick={()=>this.deleteHandler(comment)}> Delete</Button>
+              {commentObj.comment} 
+              <Button onClick={()=>this.deleteHandler(commentObj)}> Delete</Button>
               </li>)
           :
           null
