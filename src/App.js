@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router,Route,Redirect} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import About from './components/About'
+import SignUp from './components/SignUp'
 import Login from "./components/Login"
 import './App.css';
 import MarsRover from './components/MarsRover';
@@ -127,6 +128,7 @@ class App extends React.Component {
           updateCurrentUser={this.updateCurrentUser}
           />
         }} /> 
+        <Route exact path="/signup" component={SignUp}/>
         <Route exact path="/about" component={About}/>
         <Route exact path="/marsweather" component ={MarsWeather}/>
         <Route exact path ="/pictureoftheday"component={PictureOfTheDay}/>

@@ -34,13 +34,10 @@ class Login extends React.Component {
         <form action="/action_page.php" className="container" onSubmit={this.handleLoginSubmit}>
         <label for="email"><b>Username:</b></label>
         <input type="text"  name = "username" placeholder="Your username here..."   value={this.state.username} onChange={this.handleChange}></input>
-        <button type="submit" className="btn">Login</button>
+        <button type="submit" className="btn" id="login-btn">Login</button>
       </form>
     </div>
-      
-      
-        
-    )
+         )
     }
   }
 export default Login
