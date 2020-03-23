@@ -1,8 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-
-
 class MarsRover extends React.Component{
     state ={
        currentObj: "Front Hazard Avoidance Camera"
@@ -29,16 +27,22 @@ class MarsRover extends React.Component{
     render(){
     return(
         <React.Fragment>
+            <div className="container">
             <form>
                 Please select one of the following: 
             <select onChange={this.onChangeHandler}>
                 {this.camerasNames().map(name=><option value={name}>{name} </option> )}
             </select>
             </form>
-            <div className="row row-cols-1 row-cols-md-4">
-             {this.filteredCameraPics().map(card=> 
+
+
+            <div className="row">
+            {this.filteredCameraPics().map(card=> 
             <Link to={`/marsrover/${card.id}`}>
-            <img style ={{width: 100, height: 100}} src={card.image} alt={card.name} /></Link> )}
+                <div className="col-lg-3">
+            <img className="" src={card.image} alt={card.name} /></div></Link> )}
+            
+             </div>
             </div>
             </React.Fragment>
     )    

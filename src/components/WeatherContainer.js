@@ -11,14 +11,16 @@ const WeatherContainer= (props) =>{
                  we say that a day here on Earth works out to
                   an even 24 hours while on Mars, a day lasts 
                   24 hours and 40 minutes</p>
-                  
-        
+         <div className="container-fluid" >    
+        <div className="row">
        {sol_keys ? sol_keys.slice(0,6).map(sol => 
        <MarsWeatherCard 
        key={sol} 
        sol={sol} 
        info={props.sol[sol]} 
        />) : null}
+       </div>
+       </div>
         
         </div>
     )

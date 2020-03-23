@@ -4,7 +4,6 @@ class Login extends React.Component {
     username:""
   }
   handleChange=(e)=>{
-
   let copy = {...this.state} 
   copy[e.target.name] = e.target.value
    this.setState(copy)
@@ -12,7 +11,7 @@ class Login extends React.Component {
   
     handleLoginSubmit=(e)=>{
     e.preventDefault()
-      fetch(`http://localhost:4000/login`,{
+      fetch("http://localhost:4000/login",{
         method: "POST",
         headers: {
           "Content-Type" :"application/json",
@@ -23,6 +22,7 @@ class Login extends React.Component {
         })
       }).then(res => res.json())
         .then(user=>{
+        
          this.props.updateCurrentUser(user)
          }) 
         }
@@ -32,7 +32,7 @@ class Login extends React.Component {
     return(
     <div className="bg-img">
         <form action="/action_page.php" className="container" onSubmit={this.handleLoginSubmit}>
-        <label for="email"><b>Username:</b></label>
+        <label for="username"><b>Username:</b></label>
         <input type="text"  name = "username" placeholder="Your username here..."   value={this.state.username} onChange={this.handleChange}></input>
         <button type="submit" className="btn" id="login-btn">Login</button>
       </form>
