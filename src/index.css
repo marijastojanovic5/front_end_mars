@@ -13,12 +13,82 @@ code {
 }
 .pic {
   background-image: url("https://spacewallpapers.org/wp-content/uploads/2014/11/new-day-of-the-mars.jpg");
+  min-height: 850px;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 .card-group {
    display: flex; 
   
 }
+.bg-img {
+  background-image: url("https://www.rocketlawyer.com/blog/wp-content/uploads/2012/08/ThinkstockPhotos-89614571-c2.jpg");
+  min-height: 850px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: rgba(117, 111, 111, 0.932);
+}
+.btn {
+  background-color: orangered;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.btn:hover {
+  opacity: 1;
+}
+input[type=text], input[type=username] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=username]:focus {
+  background-color: white;
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#login {
+  float: right;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
 
 
