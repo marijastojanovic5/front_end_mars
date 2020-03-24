@@ -38,17 +38,27 @@ class SignUp extends React.Component {
     render(){
         return(
             <div className="bg-img">
+                <div className="container-fluid login-container">
+                <div className="row login-container">
+                <div className ="col-lg-4 offset-lg-4">
             <form action="/action_page.php" className="container" onSubmit={this.handleSignUpSubmit}>
-            <label for="name"><b>Name:</b></label>
-            <input type="text"  name = "name" placeholder="Your name here..."   value={this.state.name} onChange={this.handleChange}></input>
-            <label for="username"><b>Username:</b></label>
-            <input type="text"  name = "username" placeholder="Your username here..."   value={this.state.username} onChange={this.handleChange}></input>
-            <label for="password"><b>Password:</b></label>
-            <input type="password"  name = "password" placeholder="Your password here..."   value={this.state.password} onChange={this.handleChange}></input>
+            <div className="form-group">
+            <h3>Please sign up </h3><hr/>
+            <label for="name">Name:</label>
+            <input type="text" className="form-control" name = "name"    placeholder="Your name here..."  value={this.state.name} onChange={this.handleChange}/>
+            <label for="username">Username:</label>
+            <input type="text" className="form-control" name = "username"    placeholder="Your username here..."  value={this.state.username} onChange={this.handleChange}/>
+            <label for="password">Password:</label>
+            <input type="password" className="form-control" name = "password"    placeholder="Your password here..."  value={this.state.password} onChange={this.handleChange}/>
+        </div>
             <button type="submit" className="btn" id="login-btn">SignUp</button>
           </form>
-        </div>
-             )
+ </div>
+</div>
+</div>
+</div>
+
+)
         
     }
    
