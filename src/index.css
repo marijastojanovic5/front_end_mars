@@ -13,7 +13,7 @@ code {
 }
 .pic {
   background-image: url("https://spacewallpapers.org/wp-content/uploads/2014/11/new-day-of-the-mars.jpg");
-  min-height: 850px;
+  min-height: 800px;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -42,26 +42,88 @@ code {
 #login-btn {
   background-color: orangered;
   color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
 }
-.btn:hover {
-  opacity: 1;
+  
+.login-container {
+    height: 100vh;
+  
 }
-input[type=text], input[type=username] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
+.login-container form {
+
+      position: relative;
+      top: 25%;
+      background-color: rgba(17, 17, 17, 0.6);
+      box-shadow: #000 0px 6px 40px;
+
+      
 }
-input[type=text]:focus, input[type=username]:focus {
-  background-color: white;
-  outline: none;
+.login-container h3 {
+  color: white;
+  text-align: center;
+
 }
+.login-container label {
+  color: #ccc;
+
+}
+.login-container hr {
+  background-color: #333;
+}
+.card-holder {
+  background-color: rgba(17, 17, 17, 0.6);
+  
+}
+
+.card-holder .card {
+   margin-bottom: 30px;
+   background-color: rgba(17, 17, 17, 0.8);
+  
+
+}
+.card-holder .card .list-group-item {
+  background-color: transparent;
+
+
+}
+.card-holder .card label {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #ccc;
+
+
+}
+.card-holder .card p {
+  font-weight: bold;
+  color: #eaeaea;
+  margin-bottom: 5px!important;
+
+}
+
+.card-holder  .card h4 {
+  background-color: #333333;
+  color: #eaeaea;
+}
+.mars-weather h1 {
+  padding-top: 50px;
+  color: #fff;
+
+
+}
+.mars-weather p {
+  margin-bottom: 80px;
+  color: #ccc;
+
+}
+.weather-img {
+  background-image: url("https://www.rocketlawyer.com/blog/wp-content/uploads/2012/08/ThinkstockPhotos-89614571-c2.jpg");
+  min-height: 850px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
 
 ul {
   list-style-type: none;

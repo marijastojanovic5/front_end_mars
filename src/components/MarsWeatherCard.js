@@ -5,13 +5,26 @@ const MarsWeatherCard=(props)=>{
     const date = new Date(First_UTC).toDateString()
     return(
         
-        <div className="col-lg-4">
+        <div className="col-lg-4 card-holder">
         <Card >
+            
         <ListGroup variant="flush">
+        <h4>
         <ListGroup.Item>SOL {props.sol}</ListGroup.Item>
-        <ListGroup.Item>Day: {date}</ListGroup.Item>
-        <ListGroup.Item>Max temperature: {Math.round(AT["mx"])}°C</ListGroup.Item>
-        <ListGroup.Item>Min temperature: {Math.round(AT["mn"])}°C</ListGroup.Item>
+        </h4>
+        <label>
+        <ListGroup.Item>Day: </ListGroup.Item>
+        </label>
+        <p> <ListGroup.Item>{date} </ListGroup.Item></p>
+
+        <label>
+        <ListGroup.Item>Max temperature </ListGroup.Item>
+        </label>
+        <p> <ListGroup.Item>{Math.round(AT["mx"])}°C</ListGroup.Item></p>
+        <label>
+        <ListGroup.Item>Min temperature </ListGroup.Item>
+        </label>
+        <p> <ListGroup.Item>{Math.round(AT["mn"])}°C</ListGroup.Item></p>
         </ListGroup>
        </Card>
        </div>

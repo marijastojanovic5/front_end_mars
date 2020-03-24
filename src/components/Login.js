@@ -30,13 +30,39 @@ class Login extends React.Component {
       
     render() {
     return(
+
     <div className="bg-img">
-        <form action="/action_page.php" className="container" onSubmit={this.handleLoginSubmit}>
-        <label for="username"><b>Username:</b></label>
-        <input type="text"  name = "username" placeholder="Your username here..."   value={this.state.username} onChange={this.handleChange}></input>
-        <button type="submit" className="btn" id="login-btn">Login</button>
-      </form>
+      <div className="container-fluid login-container">
+        <div className="row login-container">
+          <div className ="col-lg-4 offset-lg-4">
+       
+<form action="/action_page.php" className="container" onSubmit={this.handleLoginSubmit}>
+
+  <div className="form-group">
+    <h3>Please log in to Mars</h3><hr/>
+
+    <label for="username">Username:</label>
+    <input type="text" className="form-control" name = "username"    placeholder="Your username here..."  value={this.state.username} onChange={this.handleChange}/>
+  </div>
+  
+  
+  <button type="submit" className="btn btn-primary btn-lg btn-block" id="login-btn">Login</button>
+</form>
+
+
+</div>
+
+</div>
+</div>
     </div>
+
+
+
+
+
+
+
+
          )
     }
   }

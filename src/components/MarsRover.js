@@ -27,7 +27,7 @@ class MarsRover extends React.Component{
     render(){
     return(
         <React.Fragment>
-            <div className="container">
+            <div className="container-fluid">
             <form>
                 Please select one of the following: 
             <select onChange={this.onChangeHandler}>
@@ -38,9 +38,10 @@ class MarsRover extends React.Component{
 
             <div className="row">
             {this.filteredCameraPics().map(card=> 
-            <Link to={`/marsrover/${card.id}`}>
                 <div className="col-lg-3">
-            <img className="" src={card.image} alt={card.name} /></div></Link> )}
+            <Link to={`/marsrover/${card.id}`}>
+            <img className="" src={card.image} alt={card.name} /></Link>  </div>)}
+           
             
              </div>
             </div>
