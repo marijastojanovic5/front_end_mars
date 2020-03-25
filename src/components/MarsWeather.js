@@ -1,10 +1,10 @@
 import React from 'react'
 import WeatherContainer from './WeatherContainer'
-class MarsWeather extends React.Component{
+class MarsWeather extends React.Component {
     
     state={
+
      sol: {}
-        
     }
     componentDidMount(){
     fetch(`https://api.nasa.gov/insight_weather/?api_key=${process.env.REACT_APP_APIKEY}&feedtype=json&ver=1.0`)  
@@ -13,8 +13,8 @@ class MarsWeather extends React.Component{
          this.setState({sol: data})
        
        
-    })
-  }
+      })
+    }
     
     render(){
         
@@ -22,9 +22,6 @@ class MarsWeather extends React.Component{
          <div>
          <WeatherContainer sol={this.state.sol} /> 
          </div>
-        
-
-
     )
     }
 

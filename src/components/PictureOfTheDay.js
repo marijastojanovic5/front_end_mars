@@ -16,16 +16,19 @@ class  PictureOfTheDay extends React.Component{
     render(){
         const { date, explanation, url, title } = this.state.picOfTheDay 
     return(
-      
-        <div className="card" style={{width: 1000}}>
-        <img className="card-img-top" src={url} alt="nasa"/>
-        <div className="card-img-overlay">
+
+        <div className="weather-img">
+        <div className="card-img">
+        <div className="container-fluid img-card" >
+        <div className="card-body">
+        <img id="pic-day" src={url} alt="nasa"/>
         </div>
-            <h5>{date}</h5>
-            <h4 className="card-title">{title}</h4>
-            <p className="card-text">{explanation}</p>
-       </div>
-     
+        <h5 className="card-title">{title}, {date}</h5>
+        <p className="card-text">{explanation}</p>
+        </div>
+        </div>
+        </div>
+    
     )
     }
 }

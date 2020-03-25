@@ -27,14 +27,14 @@ class SignUp extends React.Component {
         })
       }).then(res => res.json())
         .then(user=>{
-             this.props.updateCurrentUser(user)
-           
-         }) 
+          if(user.message){
+            alert(user.message[0])
+          } else {
+              this.props.updateCurrentUser(user)
+          }
+         })
         }
       
-
-
-
     render(){
         return(
             <div className="bg-img">
@@ -50,13 +50,13 @@ class SignUp extends React.Component {
             <input type="text" className="form-control" name = "username"    placeholder="Your username here..."  value={this.state.username} onChange={this.handleChange}/>
             <label for="password">Password:</label>
             <input type="password" className="form-control" name = "password"    placeholder="Your password here..."  value={this.state.password} onChange={this.handleChange}/>
-        </div>
-            <button type="submit" className="btn" id="login-btn">SignUp</button>
-          </form>
- </div>
-</div>
-</div>
-</div>
+            </div>
+            <button type="submit" className="btn btn-primary btn-lg btn-block" id="login-btn">SignUp</button>
+            </form>
+             </div>
+            </div>
+            </div>
+            </div>
 
 )
         

@@ -37,7 +37,7 @@ class MarsCard extends React.Component{
          .then(res=>res.json())
          .then(comment=>{
            this.setState({
-              allComments: [comment, ...this.state.allComments]
+              allComments: [comment, ...this.state.allComments],comment: ""
            })
           
              })
@@ -66,7 +66,7 @@ class MarsCard extends React.Component{
         // {/* // {props.card ?  */}
         <React.Fragment>
         <Card>
-            <img variant = "top" src ={this.props.card.image}/>
+            <img variant = "top" src ={this.props.card.image} alt="mars-card"/>
             <Card.Body className ="d-flex flex-column">
                 <div  className ="d-flex mb-2 justify-content-between">
                     <Card.Title className = "mb-0 font-weight-bold">{this.props.card.name}

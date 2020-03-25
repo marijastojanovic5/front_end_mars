@@ -128,7 +128,9 @@ class App extends React.Component {
           updateCurrentUser={this.updateCurrentUser}
           />
         }} /> 
-        <Route exact path="/signup" render={()=> <SignUp updateCurrentUser={this.updateCurrentUser}/>} />
+        <Route exact path="/signup" render={()=> {
+        return this.state.currentUser ? <Redirect to ="/profile"/> : <SignUp 
+        updateCurrentUser={this.updateCurrentUser}/>}} />
         <Route exact path="/about" component={About}/>
         <Route exact path="/marsweather" component ={MarsWeather}/>
         <Route exact path ="/pictureoftheday"component={PictureOfTheDay}/>

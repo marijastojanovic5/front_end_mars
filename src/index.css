@@ -69,6 +69,8 @@ code {
 .login-container hr {
   background-color: #333;
 }
+
+
 .card-holder {
   background-color: rgba(17, 17, 17, 0.6);
   
@@ -109,10 +111,19 @@ code {
 
 
 }
+.card-title {
+  padding-top: 50px;
+  color: #eaeaea;
+
+}
 .mars-weather p {
   margin-bottom: 80px;
   color: #ccc;
 
+}
+
+.card-text {
+  color: #ccc;
 }
 .weather-img {
   background-image: url("https://www.rocketlawyer.com/blog/wp-content/uploads/2012/08/ThinkstockPhotos-89614571-c2.jpg");
@@ -123,7 +134,17 @@ code {
   position: relative;
 }
 
+.about-page h1 {
 
+  padding-top: 20px;
+  color: rgb(194, 110, 84);
+}
+.about-page p {
+  color:#aeaeae;
+}
+.card-text  {
+  margin-right: 500px;
+}
 
 ul {
   list-style-type: none;
@@ -150,6 +171,11 @@ li a {
 
 li a:hover {
   background-color: #111;
+}
+#pic-day {
+  height: 300px;
+  width: 50%;
+
 }
 
 
