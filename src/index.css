@@ -75,6 +75,13 @@ code {
   background-color: rgba(17, 17, 17, 0.6);
   
 }
+.rover-img {
+    
+    max-width: 100%;
+    border-radius: 5px;
+    border-color: rgb(24, 23, 23);
+    
+} 
 
 .card-holder .card {
    margin-bottom: 30px;
@@ -100,6 +107,15 @@ code {
   margin-bottom: 5px!important;
 
 }
+.col-lg-3 {
+    margin-right: 40px;
+    margin-bottom:  40px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    background-color: rgba(17, 17, 17, 0.6);
+    
+}
 
 .card-holder  .card h4 {
   background-color: #333333;
@@ -117,10 +133,15 @@ code {
 
 }
 .mars-weather p {
-  margin-bottom: 80px;
+  margin-bottom: 20px;
   color: #ccc;
 
 }
+.mars-weather label {
+    color: #ccc;
+
+}
+
 
 .card-text {
   color: #ccc;

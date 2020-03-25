@@ -36,7 +36,7 @@ class App extends React.Component {
     fetch("http://localhost:4000/mars_cards")
     .then(res=>res.json())
     .then(array=>this.setState({
-      marsRoverArray: array, loading: false
+      marsRoverArray: array,loading: false
     }))
     }
     
@@ -92,7 +92,7 @@ class App extends React.Component {
   return (
     
     <div className="App">
-      {!this.state.loading ?
+      
      
         <Router>
         <NavBar
@@ -134,9 +134,7 @@ class App extends React.Component {
         <Route exact path="/marsweather" component ={MarsWeather}/>
         <Route exact path ="/pictureoftheday"component={PictureOfTheDay}/>
         </Router>
-        : <img srce=""/>}
-       
-       </div>
+        </div>
        )
       }
 }

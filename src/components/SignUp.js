@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from 'react-router-dom'
 class SignUp extends React.Component {
     state ={
         name: "",
@@ -52,6 +53,8 @@ class SignUp extends React.Component {
             <input type="password" className="form-control" name = "password"    placeholder="Your password here..."  value={this.state.password} onChange={this.handleChange}/>
             </div>
             <button type="submit" className="btn btn-primary btn-lg btn-block" id="login-btn">SignUp</button>
+            <label> Already a member? <Link to="/login">Log in here</Link></label>
+
             </form>
              </div>
             </div>

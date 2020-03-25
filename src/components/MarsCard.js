@@ -61,9 +61,7 @@ class MarsCard extends React.Component{
   
     render(){
     return(
-        // <div>
-           
-        // {/* // {props.card ?  */}
+       
         <React.Fragment>
         <Card>
             <img variant = "top" src ={this.props.card.image} alt="mars-card"/>
@@ -99,7 +97,6 @@ class MarsCard extends React.Component{
           null
           }
          </Form>
-         
          </React.Fragment>
        
     )
