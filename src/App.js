@@ -15,7 +15,7 @@ import MarsWeather from './components/MarsWeather'
 class App extends React.Component {
    state={
       marsRoverArray: [],
-      loading: false,
+      loading: true,
       currentUser: null,
       favorites: []
       
@@ -36,7 +36,7 @@ class App extends React.Component {
     fetch("http://localhost:4000/mars_cards")
     .then(res=>res.json())
     .then(array=>this.setState({
-      marsRoverArray: array
+      marsRoverArray: array, loading: false
     }))
     }
     
@@ -92,8 +92,8 @@ class App extends React.Component {
   return (
     
     <div className="App">
+      {!this.state.loading ?
      
-
         <Router>
         <NavBar
         user= {this.state.currentUser} 
@@ -108,7 +108,6 @@ class App extends React.Component {
           remove={false}
           userId={this.state.currentUser.id}
 
-   
           />
         }}/>
         <Route exact path="/marsrover" render={()=>
@@ -134,8 +133,8 @@ class App extends React.Component {
         <Route exact path="/about" component={About}/>
         <Route exact path="/marsweather" component ={MarsWeather}/>
         <Route exact path ="/pictureoftheday"component={PictureOfTheDay}/>
-        
         </Router>
+        : <img srce=""/>}
        
        </div>
        )

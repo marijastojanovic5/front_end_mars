@@ -37,7 +37,7 @@ class MarsCard extends React.Component{
          .then(res=>res.json())
          .then(comment=>{
            this.setState({
-              allComments: [comment, ...this.state.allComments],comment: ""
+              allComments: [comment, ...this.state.allComments], comment: ""
            })
           
              })
@@ -84,12 +84,8 @@ class MarsCard extends React.Component{
            </Card>
            <Form onSubmit={this.submitReview}>
            <Form.Group>
-             <Form.Label>Your Name</Form.Label>
-             <Form.Control type="text" name="name"  placeholder="Your name here..." onChange={this.handleChange} />
-            </Form.Group>
-           <Form.Group>
              <Form.Label>Leave a comment</Form.Label>
-             <Form.Control type="text" name="comment" placeholder="Leave a comment..."  onChange={this.handleChange}/>
+             <Form.Control type="text" name="comment" placeholder="Leave a comment..."   value={this.state.comment} onChange={this.handleChange}/>
            </Form.Group>
           <Button variant="primary" type="submit">Submit</Button>
           <h4>All comments:</h4>
