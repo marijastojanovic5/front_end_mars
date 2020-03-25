@@ -26,7 +26,6 @@ class App extends React.Component {
       
       this.setState({
         currentUser: user.user,
-        loading: true,
         favorites: user.favorites
       })
       
@@ -92,6 +91,7 @@ class App extends React.Component {
   return (
     
     <div className="App">
+    { !this.state.loading ?
       
      
         <Router>
@@ -134,6 +134,8 @@ class App extends React.Component {
         <Route exact path="/marsweather" component ={MarsWeather}/>
         <Route exact path ="/pictureoftheday"component={PictureOfTheDay}/>
         </Router>
+        : 
+        <img src='https://miro.medium.com/max/3070/1*FuoW3uH4SKYZwWlpnCfLGg.png'/>}
         </div>
        )
       }
