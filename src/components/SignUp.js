@@ -45,11 +45,11 @@ class SignUp extends React.Component {
             <form action="/action_page.php" className="container" onSubmit={this.handleSignUpSubmit}>
             <div className="form-group">
             <h3>Please sign up </h3><hr/>
-            <label for="name">Name:</label>
+            <label htmlFor="name">Name:</label>
             <input type="text" className="form-control" name = "name"    placeholder="Your name here..."  value={this.state.name} onChange={this.handleChange}/>
-            <label for="username">Username:</label>
+            <label htmlFor="username">Username:</label>
             <input type="text" className="form-control" name = "username"    placeholder="Your username here..."  value={this.state.username} onChange={this.handleChange}/>
-            <label for="password">Password:</label>
+            <label htmlFor="password">Password:</label>
             <input type="password" className="form-control" name = "password"    placeholder="Your password here..."  value={this.state.password} onChange={this.handleChange}/>
             </div>
             <button type="submit" className="btn btn-primary btn-lg btn-block" id="login-btn">SignUp</button>

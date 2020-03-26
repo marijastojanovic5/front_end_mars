@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 class MarsRover extends React.Component{
     state ={
        currentObj: "Front Hazard Avoidance Camera"
+
     }
 
     filteredCameraPics(){
@@ -37,23 +38,19 @@ class MarsRover extends React.Component{
                     Mars 2020 is a Mars rover mission by NASA's Mars Exploration Program 
                     with a planned launch on 17 July 2020, and touch down in Jezero crater
                     on Mars on 18 February 2021.</p><br/>
-                  <label>Please select one of the Curiosity's camera to see the pictures od Mars:</label> 
+                  <label>Please select one of the Curiosity's camera to see the pictures od Mars:</label> <br/>
             <select onChange={this.onChangeHandler}>
                 {this.camerasNames().map(name=><option value={name}>{name} </option> )}
             </select>
             </form>
-
-
             <div className="row ">
             {this.filteredCameraPics().map(card=> 
                 <div className="col-lg-3">
             <Link to={`/marsrover/${card.id}`} >
-            <img className="rover-img" src={card.image} alt={card.name} />
-            <p>{card.name}</p><p>Rover status: {card.status.toUpperCase()}</p>
+            <img className="rover-img" src={card.image} alt={card.name}  key={card.id}/>
+            <h5 className="card-subtitle">{card.name}</h5><p>Rover status: {card.status.toUpperCase()}</p>
            </Link>  </div>)}
-           
-            
-             </div>
+            </div>
             </div>
             </React.Fragment>
     )    

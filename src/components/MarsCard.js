@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card,Button,Form } from "react-bootstrap"
+import { Button,Form} from "react-bootstrap"
+import {Link} from 'react-router-dom'
 
 
 class MarsCard extends React.Component{
@@ -44,6 +45,7 @@ class MarsCard extends React.Component{
            
         }  
         deleteHandler=(comment)=>{
+
            let commentId = comment.id
            
         fetch(`http://localhost:4000/comments/${commentId}`, {
@@ -61,44 +63,55 @@ class MarsCard extends React.Component{
   
     render(){
     return(
+        
        
-        <React.Fragment>
-        <Card>
-            <img variant = "top" src ={this.props.card.image} alt="mars-card"/>
-            <Card.Body className ="d-flex flex-column">
-                <div  className ="d-flex mb-2 justify-content-between">
-                    <Card.Title className = "mb-0 font-weight-bold">{this.props.card.name}
-                    </Card.Title>
+        <div className= "container-fluid weather-img mars-detail-wrapper">
+            <div className="row">
+               <div className="col-lg-4">
+            <img  className="image-mars" variant="top" src ={this.props.card.image} alt="mars-card"/>
+            </div>
+            <div className="col-lg-8">
+           
+                <div className ="main-title">
+                <h1>{this.props.card.name}</h1>
                 </div>
-                    <Card.Text className ="text-secondary">Launch date: {this.props.card.launch_date}</Card.Text>
-                    <Card.Text className ="text-secondary">Landing date: {this.props.card.landing_date}</Card.Text>
-                    <Card.Text className ="text-secondary">Status: {this.props.card.status}</Card.Text>
-            </Card.Body>
+                <div className="mars-data">
+                <span> Launch date: </span>
+                <p>{this.props.card.launch_date}</p>
+                <span> Landing date: </span>
+                <p>{this.props.card.landing_date}</p>
+                <span> Status: </span>
+                <p>{this.props.card.status}</p>
+                </div>
+                
              {!this.props.remove ?
             <Button className='mt-auto font-weight-bold' variant="success" 
             onClick={()=>{this.props.onClickHandler(this.props.card)}} >Add this to your library</Button> :
             <Button className='mt-auto font-weight-bold' variant="danger" 
             onClick={()=>{this.props.onClickHandler(this.props.card)}} >Remove from your library</Button>}
-           </Card>
-           <Form onSubmit={this.submitReview}>
-           <Form.Group>
-             <Form.Label>Leave a comment</Form.Label>
-             <Form.Control type="text" name="comment" placeholder="Leave a comment..."   value={this.state.comment} onChange={this.handleChange}/>
+            </div>
+            </div>
+            <div className="row form-container">
+            <div className="col-lg-4">
+            <Form onSubmit={this.submitReview}>
+            <Form.Group>
+             <Form.Label className="form-subtitle">Leave a comment</Form.Label>
+             <Form.Control textarea="text" name="comment" placeholder="Leave a comment..."   value={this.state.comment} onChange={this.handleChange}/>
            </Form.Group>
-          <Button variant="primary" type="submit">Submit</Button>
-          <h4>All comments:</h4>
-          {this.state.allComments ? 
+           <Button variant="primary" type="submit">Submit</Button>
+          <h5 className="form-subtitle">All comments:</h5>
+          { this.state.allComments ? 
           this.state.allComments.map(commentObj=>
-          <li>
+              <li>
               {commentObj.comment} 
-              <Button onClick={()=>this.deleteHandler(commentObj)}> Delete</Button>
-              </li>)
-          :
-          null
-          }
-         </Form>
-         </React.Fragment>
-       
+              <Button variant="danger" onClick={()=>this.deleteHandler(commentObj)}> Delete</Button>
+              </li>) :
+           null}
+          </Form>
+          </div>
+          </div>
+          <Link to="/marsrover">Back to Gallery</Link><br/>
+          </div>
     )
     }
 }

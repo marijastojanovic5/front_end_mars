@@ -8,10 +8,10 @@ const UserProfile =(props)=> {
 
     
         return(
-            <div> 
+            <div className ="weather-img"> 
                 <Link to="/marsrover">Back to Gallery</Link><br/>
                Hello {props.user.username} !<br/>
-              <div> Your library:
+              <div> <h5 className="card-title">Your library:</h5>
                   {props.favorites.map(card=>
                     <MarsCard
                     card={card}

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -98,8 +99,53 @@ code {
   text-transform: uppercase;
   font-size: 12px;
   color: #ccc;
+  margin-top: 15px;
+  margin-bottom: 0px;
 
 
+}
+.form-subtitle {
+  color: #ccc;
+  margin-top: 50px;
+}
+.mars-detail-wrapper {
+  padding-top: 50px;
+}
+.main-title h1 {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+}
+.mars-data span {
+  color: #ccc;
+  text-transform: uppercase;
+  font-size: 12px;
+
+}
+.mars-data p {
+  color: #fff;
+  font-weight: bold;
+}
+.form-container {
+  margin-top: 30px;
+}
+
+.image-mars {
+  width: inherit;
+  border-radius: 5px;
+  border: 1px solid #333;
+  padding: 5px;
+}
+.card-subtitle {
+  text-decoration: none;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 .card-holder .card p {
   font-weight: bold;
@@ -108,6 +154,7 @@ code {
 
 }
 .col-lg-3 {
+    border-radius: 5px;
     margin-right: 40px;
     margin-bottom:  40px;
     padding-top: 50px;
@@ -121,10 +168,16 @@ code {
   background-color: #333333;
   color: #eaeaea;
 }
+
 .mars-weather h1 {
   padding-top: 50px;
   color: #fff;
 
+
+}
+.card-list-item {
+  padding-top: 0px;
+  padding-bottom: 0px;
 
 }
 .card-title {
@@ -148,6 +201,7 @@ code {
 }
 .weather-img {
   background-image: url("https://www.rocketlawyer.com/blog/wp-content/uploads/2012/08/ThinkstockPhotos-89614571-c2.jpg");
+
   min-height: 850px;
   background-position: center;
   background-repeat: no-repeat;
