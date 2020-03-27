@@ -2,9 +2,10 @@ import React from 'react'
 
 const About =()=>{
     return (
-       <div className="pic container-fluid about-page">
+       <div className="pic container-fluid about-page ">
+         
             <h1>About Mars</h1>
-            <p> Mars is the fourth planet from the Sun and orbits the Sun
+            <p className="about-mars"> Mars is the fourth planet from the Sun and orbits the Sun
                at an average distance of approximately 141 million miles 
                (225 million km). Mars rotates on its axis, completing one
                revolution every 24.6 hours. This produces seasons on the 
@@ -25,6 +26,7 @@ const About =()=>{
                The mean diameter of Mars is 4,217 miles (6,785 km or .53 x Earth diameter).
                The resulting surface gravitational acceleration (gmr) is given by:
                gmr = 12.1 ft/sec^2 = 3.7 m/sec^2 = .37 Earth gravity</p>
+              
                <div className ="row">
                <div className ="col-lg-12">
 

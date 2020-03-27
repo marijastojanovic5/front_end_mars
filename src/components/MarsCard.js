@@ -100,13 +100,15 @@ class MarsCard extends React.Component{
            </Form.Group>
            <Button variant="primary" type="submit">Submit</Button>
           <h5 className="form-subtitle">All comments:</h5>
-          { this.state.allComments ? 
+          
+          {this.state.allComments ? 
           this.state.allComments.map(commentObj=>
-              <li>
+              <li className="letters">
               {commentObj.comment} 
               <Button variant="danger" onClick={()=>this.deleteHandler(commentObj)}> Delete</Button>
               </li>) :
-           null}
+           null }
+           
           </Form>
           </div>
           </div>

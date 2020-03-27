@@ -4,6 +4,7 @@ const NavBar=(props)=>{
     return (
             <div>
             <ul>
+              <li><i className='fas fa-circle'></i></li>
               <li><Link to='/about'>About</Link></li>
               <li><Link to='/pictureoftheday'>NASA Picture Of The Day</Link></li>
               <li><Link to='/marsweather'>Mars Weather</Link></li>
