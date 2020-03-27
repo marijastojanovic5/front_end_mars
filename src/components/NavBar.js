@@ -2,7 +2,7 @@ import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 const NavBar=(props)=>{
     return (
-            <div>
+            <div className="fixed-nav-bar">
             <ul>
               <li><i className='fas fa-circle'></i></li>
               <li><Link to='/about'>About</Link></li>

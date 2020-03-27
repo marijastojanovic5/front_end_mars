@@ -10,6 +10,14 @@ body {
   background-size: cover;
 
 }
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  height: 50px;
+}
 .fas  {
   color:  orangered;
   padding-top: 8px;
@@ -60,7 +68,7 @@ code {
       
 }
 .username-data {
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: -50px;
   color: #ccc;
 }
@@ -79,7 +87,7 @@ code {
 
 
 .card-holder {
-  background-color: rgba(17, 17, 17, 0.6);
+  background-color: rgba(17, 17, 17, 0.4);
   
 }
 .rover-img {
@@ -90,13 +98,13 @@ code {
     
 } 
 .about-mars {
-  background-color: rgba(17, 17, 17, 0.3);
+  background-color: rgba(8, 7, 7, 0.3);
 
 }
 
 .card-holder .card {
    margin-bottom: 30px;
-   background-color: rgba(17, 17, 17, 0.7);
+   background-color: rgba(7, 1, 1, 0.7);
 
   
 
@@ -179,7 +187,7 @@ code {
 }
 
 .mars-weather h1 {
-  padding-top: 50px;
+  padding-top: 70px;
   color: #fff;
 
 
@@ -222,9 +230,8 @@ code {
   position: relative;
 } */
 
-.about-page h1 {
-
-  padding-top: 20px;
+.about-page  {
+  padding-top: 90px;
   color: rgb(194, 110, 84);
 }
 .about-page p {
@@ -261,6 +268,8 @@ li a:hover {
   background-color: #111;
 }
 #pic-day {
+  margin-top: 50px;
+  margin-bottom: -40px;
   height: 300px;
   width: 50%;
 

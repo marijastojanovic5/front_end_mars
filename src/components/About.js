@@ -4,8 +4,8 @@ const About =()=>{
     return (
        <div className="pic container-fluid about-page ">
          
-            <h1>About Mars</h1>
-            <p className="about-mars"> Mars is the fourth planet from the Sun and orbits the Sun
+           
+            <p className="about-mars"> MARS is the fourth planet from the Sun and orbits the Sun
                at an average distance of approximately 141 million miles 
                (225 million km). Mars rotates on its axis, completing one
                revolution every 24.6 hours. This produces seasons on the 
