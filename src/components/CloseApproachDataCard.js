@@ -3,7 +3,7 @@ import {Card,ListGroup} from 'react-bootstrap'
 
 
 const CloseApproachDataCard =(props)=> { 
-    console.log("what are props", props)
+    
     return(
         <div className="col-lg-4 card-holder">
         <Card >
