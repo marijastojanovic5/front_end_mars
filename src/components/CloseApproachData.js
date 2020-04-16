@@ -1,7 +1,7 @@
 import React from "react"
-import CloseAproachDataContainer from './CloseAproachDataContainer'
+import CloseApproachDataContainer from './CloseApproachDataContainer'
 
-class CloseAproachData extends React.Component {
+class CloseApproachData extends React.Component {
     state ={
         asteroids: []
     }
@@ -15,9 +15,9 @@ class CloseAproachData extends React.Component {
     render(){
         return(
             <div>
-         <CloseAproachDataContainer asteroids={this.state.asteroids} /> 
+         <CloseApproachDataContainer asteroids={this.state.asteroids} /> 
          </div>
         )
     }
 }
-export default CloseAproachData
+export default CloseApproachData

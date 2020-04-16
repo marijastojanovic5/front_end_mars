@@ -9,7 +9,7 @@ const NavBar=(props)=>{
               <li><Link to='/pictureoftheday'>NASA Picture Of The Day</Link></li>
               <li><Link to='/marsweather'>Mars Weather</Link></li>
               <li><Link to="/marsrover">Mars Rover</Link></li>
-              <li><Link to="/closeaproach">Close Aproach Data</Link></li>
+              <li><Link to="/closeapproach">Close Approach Data</Link></li>
               <li><Link to="/profile">Profile</Link></li>
              {props.match.path === '/login' ? 
               <li><Link to="/login">Login</Link></li>

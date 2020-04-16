@@ -1,22 +1,22 @@
 import React from 'react'
-import CloseAproachDataCard from './CloseAproachDataCard'
+import CloseApproachDataCard from './CloseApproachDataCard'
 
-const CloseAproachDataContainer=({asteroids})=>{
+const CloseApproachDataContainer=({asteroids})=>{
     
     return(
             <div className="weather-img">
             <div className="container-fluid mars-weather" >
-             <h1>Close aproach bodies in the past 2 years</h1>
+             <h1>Close approach bodies in the past 2 years</h1>
              <p>Lunar distance (LD), also called Earth–Moon distance,
                   or distance to the Moon, is a unit of measure in 
                   astronomy. It is the average distance from the center 
                   of Earth to the center of the Moon. Below we have  
-                  close-approach data within 10 lunar distances
-                   on or after 2018-Jan-01 sorted by distance.</p>
+                  close-approach data (asteroid or comet) within 10 Lunar distances
+                   on or after 2018-Jan-01 sorted by distance. One Lunar distance, for example is 238,856 miles. An AU is 389 Lunar distances. </p>
 
                    <div className ="row">
                         {asteroids ? asteroids.map(asteroid => 
-                        <CloseAproachDataCard 
+                        <CloseApproachDataCard 
                         key={asteroid[0]} 
                         asteroid={asteroid} 
                         
@@ -27,4 +27,4 @@ const CloseAproachDataContainer=({asteroids})=>{
         )
     
 }
-export default CloseAproachDataContainer
+export default CloseApproachDataContainer

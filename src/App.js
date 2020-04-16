@@ -10,7 +10,7 @@ import MarsCard from './components/MarsCard';
 import UserProfile from './components/UserProfile'
 import PictureOfTheDay from './components/PictureOfTheDay';
 import MarsWeather from './components/MarsWeather'
-import CloseAproachData from './components/CloseAproachData'
+import CloseApproachData from './components/CloseApproachData'
  
 
 class App extends React.Component {
@@ -133,7 +133,7 @@ class App extends React.Component {
         updateCurrentUser={this.updateCurrentUser}/>}} />
         <Route exact path="/about" component={About}/>
         <Route exact path="/marsweather" component ={MarsWeather}/>
-        <Route exact path="/closeaproach" component={CloseAproachData}/>
+        <Route exact path="/closeapproach" component={CloseApproachData}/>
         <Route exact path ="/pictureoftheday"component={PictureOfTheDay}/>
         </Router>
          
