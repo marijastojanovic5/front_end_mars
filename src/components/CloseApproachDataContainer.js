@@ -1,7 +1,12 @@
 import React from 'react'
 import CloseApproachDataCard from './CloseApproachDataCard'
 
-const CloseApproachDataContainer=({asteroids})=>{
+class CloseApproachDataContainer extends React.Component{
+     state={ 
+          asteroids: this.props.asteroids
+     }
+     
+     render(){
     
     return(
             <div className="weather-img">
@@ -13,9 +18,10 @@ const CloseApproachDataContainer=({asteroids})=>{
                   of Earth to the center of the Moon. Below we have  
                   close-approach data (asteroid or comet) within 10 Lunar distances
                    on or after 2018-Jan-01 sorted by distance. One Lunar distance, for example is 238,856 miles. An AU is 389 Lunar distances. </p>
+                   
 
                    <div className ="row">
-                        {asteroids ? asteroids.map(asteroid => 
+                        {this.props.asteroids ? this.props.asteroids.map(asteroid => 
                         <CloseApproachDataCard 
                         key={asteroid[0]} 
                         asteroid={asteroid} 
@@ -25,6 +31,6 @@ const CloseApproachDataContainer=({asteroids})=>{
              </div>
              </div>
         )
-    
+                        }
 }
 export default CloseApproachDataContainer

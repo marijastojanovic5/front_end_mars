@@ -5,8 +5,9 @@ class CloseApproachData extends React.Component {
     state ={
         asteroids: []
     }
+   
     componentDidMount(){
-        fetch("https://ssd-api.jpl.nasa.gov/cad.api?dist-max=10LD&date-min=2018-01-01&sort=dist&body=mars")
+        fetch("https://ssd-api.jpl.nasa.gov/cad.api?dist-max=10LD&date-min=2017-01-01&body=mars")
         .then(res=>res.json())
         .then(data=>{
          this.setState({asteroids: data.data})
@@ -14,8 +15,8 @@ class CloseApproachData extends React.Component {
         }
     render(){
         return(
-            <div>
-         <CloseApproachDataContainer asteroids={this.state.asteroids} /> 
+         <div>
+         <CloseApproachDataContainer asteroids={this.state.asteroids}  /> 
          </div>
         )
     }
